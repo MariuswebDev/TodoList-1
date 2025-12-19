@@ -9,17 +9,25 @@
 </head>
 
 <body>
+    <div class="list-body">
+        <h3>Todo List Tasks</h3>
+        <div class="add-section">
+            <input type="text" class="input" id="input">
+            <button id="add" class="add">Add</button>
+        </div>
 
-    <input type="text" id="input">
-    <button id="add">Add</button>
 
-    <ul id="taskList">
-        <!-- <li></li> -->
-    </ul>
+        <ul id="taskList">
+            <!-- <li></li> -->
+        </ul>
+        <div class="tracking">
+            <span id="totaltasks">Total Tasks: 0</span>
+            <span id="completedtasks">Completed: 0</span>
+            <span id="ongoingtasks">Inprogress: 0</span>
+        </div>
 
-    <span id="totaltasks">Total Tasks: 0</span>
-    <span id="completedtasks">Completed: 0</span>
-    <span id="ongoingtasks">Inprogress: 0</span>
+
+    </div>
 
     <script src="index.js"></script>
 </body>

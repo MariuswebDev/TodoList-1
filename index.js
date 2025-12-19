@@ -35,6 +35,7 @@ function addTask() {
     taskText.textContent = tasks;
 
     const deleteButton = document.createElement("button");
+    deleteButton.className = "delete";
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener("click", () => {
         createTask.remove();
@@ -42,21 +43,27 @@ function addTask() {
     });
 
     const editButton = document.createElement("button");
+    editButton.className = "edit";
     editButton.textContent = "Edit";
     editButton.addEventListener("click", () => {
         const newTask = prompt("Edit task...", tasks);
-        if (newTask === null || newTask === "");
-        taskText.textContent = newTask;
+        if (newTask === null || newTask === "") {
+
+            taskText.textContent = newTask;
+        }
     });
 
     const timeInfo = document.createElement("div");
     const createdTime = new Date();
-    timeInfo.textContent = `created: ${formatTime(createdTime)}`
+    timeInfo.textContent = `created: ${formatTime(createdTime)}`;
+    timeInfo.className = "time";
 
     const completionTime = document.createElement("div");
+    completionTime.className = "completedTime";
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.className = "check";
     checkbox.addEventListener("change", () => {
         const completed = new Date();
         if (checkbox.checked) {
@@ -78,11 +85,11 @@ function addTask() {
     createTask.appendChild(completionTime);
     taskList.appendChild(createTask);
     inputElement.value = "";
+    updateCounts();
 }
 
 addBtn.addEventListener("click", () => {
     addTask();
-    updateCounts();
 });
 
 inputElement.addEventListener("keypress", (e) => { e.key === "Enter" && addTask() })
