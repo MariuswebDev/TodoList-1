@@ -15,12 +15,12 @@ function updateCounts() {
 }
 
 function formatTime(date) {
-    return date.toString('en-US', {
-        year: "short",
-        day: "short",
-        month: "numeric",
-        hour: "numeric",
-        minute: "numeric"
+    return date.toLocaleString('en-US', {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
     });
 }
 
