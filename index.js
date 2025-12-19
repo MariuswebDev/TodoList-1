@@ -43,14 +43,12 @@ function addTask() {
     });
 
     const editButton = document.createElement("button");
-    editButton.className = "edit";
     editButton.textContent = "Edit";
+    editButton.className = "edit";
     editButton.addEventListener("click", () => {
         const newTask = prompt("Edit task...", tasks);
-        if (newTask === null || newTask === "") {
-
-            taskText.textContent = newTask;
-        }
+        if (newTask === null || newTask === "");
+        taskText.textContent = newTask;
     });
 
     const timeInfo = document.createElement("div");
